@@ -162,3 +162,7 @@ X-Forwarded-Proto: http
 X-Forwarded-Server: traefik-67f6c94c47-5ldpz
 X-Real-Ip: 10.42.0.7
 ```
+
+
+## Logs
+`$ kubectl logs deployment/traefik-deployment -n traefik --follow`
