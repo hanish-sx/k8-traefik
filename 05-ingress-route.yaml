@@ -9,7 +9,8 @@ spec:
   routes:
     - kind: Rule
       # match: Host(`*`)
-      match: PathPrefix(`/`) || PathPrefix(`/who`)
+      # match: PathPrefix(`/`) || PathPrefix(`/who`) # if we use multiple path, it will routed to our app
+      match: PathPrefix(`/who`)
       services:
         - namespace: traefik
           name: whoami
