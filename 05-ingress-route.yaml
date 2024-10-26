@@ -1,0 +1,20 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroute
+  namespace: traefik
+spec:
+  # entryPoints:
+  #    - web
+  routes:
+    - kind: Rule
+      # match: Host(`*`)
+      match: PathPrefix(`/`) || PathPrefix(`/who`)
+      services:
+        - namespace: traefik
+          name: whoami
+          port: 8088
+      middlewares:
+        # - name: traefik-test-auth@kubernetescrd
+        - name: test-auth
+

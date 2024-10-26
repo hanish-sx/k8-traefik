@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami-ingress
+  namespace: traefik
+  # annotations:
+  #   traefik.ingress.kubernetes.io/router.entrypoints: web
+  #   traefik.ingress.kubernetes.io/router.rule: Host(`*`)
+  #   traefik.ingress.kubernetes.io/middleware: traefik-test-auth@kubernetescrd
+spec:
+  rules:
+  - http:
+  # - host: traefik.example.com 
+  #  http:
+      paths:
+      - path: /who
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+                name: web
+
