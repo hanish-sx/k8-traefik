@@ -3,10 +3,6 @@ kind: Ingress
 metadata:
   name: whoami-ingress
   namespace: traefik
-  # annotations:
-  #   traefik.ingress.kubernetes.io/router.entrypoints: web
-  #   traefik.ingress.kubernetes.io/router.rule: Host(`*`)
-  #   traefik.ingress.kubernetes.io/middleware: traefik-test-auth@kubernetescrd
 spec:
   rules:
   - http:
